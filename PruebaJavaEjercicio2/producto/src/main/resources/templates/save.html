@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http:thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Productos</title>
+<!-- Bootstrap -->
+<link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+	<div class="container">
+	<div>
+	<h1 class="form-group text-center"> Agregar Productos</h1>
+		<form action="#" th:action="@{/save}" th:object=${producto} method="post")>
+			<div class="form-group">
+				<label >Nombre</label>
+				<input type="text" Placeholder="introduce el nombre del producto" class="form-control" id="nombre" th:field="*{nombre}" name="nombre">
+			</div>
+			<input type="hidden" th:field="*{id}" name="id" id="id">
+			<div class="form-group">
+				<label >Cantidad</label>
+				<input type="text" Placeholder="introduce la cantidad de este producto" class="form-control"   th:field="*{cantidad}" name="cantidad">
+			</div>
+			<div class="form-group">
+				<label >Precio</label>
+				<input type="text" Placeholder="introduce el precio del producto" class="form-control"  th:field="*{precio}" name="Precio">
+			</div>
+			<div class="form-group">
+				<label >Vencimiento</label>
+				<input type="text" Placeholder="introduce la fecha de vencimiento Ej: 2019-10-05" class="form-control"  th:field="*{vencimiento}" name="vencimiento">
+			</div>
+			<div class="form-group">
+				<label >Categoria</label>
+				<input type="text" Placeholder="Ejemplo: Limpieza,Alimentos,Cosmeticos" class="form-control"  th:field="*{categoria}" name="categoria">
+			</div>
+			<button type="submit" class="btn btn-success">Guardar</button>
+		</form>
+	</div>
+	</div>
+</body>
+</html>
